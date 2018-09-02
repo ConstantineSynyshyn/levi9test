@@ -4,8 +4,16 @@ import { Button } from '@material-ui/core';
 const PaginationComponent = (props) => {
 
     const disableButton = props.currentPage === 1 ? 'true' : null;
+
+    const styles = {
+        'display': 'flex',
+        'margin': '30px auto',
+        'justify-content': 'space-around'
+
+
+    }
     return (
-        <div>
+        <div style={styles}>
             <Button
                 disabled={disableButton}
                 variant="contained"
@@ -15,13 +23,17 @@ const PaginationComponent = (props) => {
                 Prev
             </Button>
 
-            <input
-                type='number'
-                autoFocus
-                value={props.currentPage}
-                onChange={props.handleChange}
-            />
-            <h4>{`Page ${props.currentPage} of ${props.totalPages}`}</h4>
+            <div>
+                <span>Page</span>
+                <input
+                    type='text'
+                    autoFocus
+                    value={props.currentPage}
+                    onChange={props.handleChange}
+                /><span>of {props.totalPages}</span>
+            </div>
+
+
             <Button
                 variant="contained"
                 color="primary"

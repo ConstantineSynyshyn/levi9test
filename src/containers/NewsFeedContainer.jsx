@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 import AccordionComponent from '../components/AccordionComponent';
 import PaginationComponent from '../components/PaginationComponent';
 import RefreshButtonComponent from '../components/RefreshButtonComponent';
@@ -70,7 +71,7 @@ class NewsFeedComponent extends Component {
             }
         } catch (err) {
             this.setState({
-                error: 'Internal Server Error'
+                error: 'Holy guacamole... Something went wrong. Better luck next time.'
             })
         }
     }
@@ -83,7 +84,7 @@ class NewsFeedComponent extends Component {
                 />
                 {
                     this.state.error
-                        ? this.state.error
+                        ? <span>{this.state.error}</span>
                         : <div>
                             <RefreshButtonComponent
                                 handleClick={this.onRefreshButton}
@@ -97,6 +98,7 @@ class NewsFeedComponent extends Component {
                                 handlePrevClick={this.onPrevPageClick}
                                 handleNextClick={this.onNextPageClick}
                                 handleChange={this.changeHandler}
+
                             />
                         </div>
                 }
