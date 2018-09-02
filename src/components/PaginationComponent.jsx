@@ -2,9 +2,12 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 
 const PaginationComponent = (props) => {
+
+    const disableButton = props.currentPage === 1 ? 'true' : null;
     return (
         <div>
             <Button
+                disabled={disableButton}
                 variant="contained"
                 color="primary"
                 onClick={props.handlePrevClick}
@@ -14,6 +17,7 @@ const PaginationComponent = (props) => {
 
             <input
                 type='number'
+                autoFocus
                 value={props.currentPage}
                 onChange={props.handleChange}
             />

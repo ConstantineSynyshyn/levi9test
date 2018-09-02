@@ -4,7 +4,8 @@ import { Button } from '@material-ui/core';
 const RefreshButtonComponent = (props) => {
     return (
         <Button
-            variant="contained"
+            size='large'
+            variant="outlined"
             color="primary"
             onClick={props.handleClick}
         >

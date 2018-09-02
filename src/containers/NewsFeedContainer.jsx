@@ -49,7 +49,7 @@ class NewsFeedComponent extends Component {
     }
 
     getNews = async (page = 1) => {
-        const token = 'c6d4065a-fd83-490f-b52a-683666001cbf';
+        const token = 'a1f0d801-b45b-4fb8-aacc-d31d124a3614';
         const url = `https://content.guardianapis.com/search?api-key=${token}&page=${page}&show-blocks=body`;
 
         try {
