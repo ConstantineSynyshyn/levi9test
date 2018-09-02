@@ -3,21 +3,36 @@ import { Button } from '@material-ui/core';
 
 const PaginationComponent = (props) => {
 
-    const disabledButton = props.currentPage === 1 ?
+    const disabledPrevButton = props.currentPage === 1 ?
         <Button
             variant="contained"
             color="primary"
-            disabled
-            onClick={props.handlePrevClick}
-        >
+            disabled>
             Prev
-</Button> :
+        </Button>
+        :
         <Button
             variant="contained"
             color="primary"
             onClick={props.handlePrevClick}
         >
             Prev
+</Button>;
+
+    const disabledNextButton = props.currentPage === props.totalPages ?
+        <Button
+            variant="contained"
+            color="primary"
+            disabled>
+            Next
+        </Button>
+        :
+        <Button
+            variant="contained"
+            color="primary"
+            onClick={props.handleNextClick}
+        >
+            Next
 </Button>;
 
     const styles = {
@@ -29,7 +44,7 @@ const PaginationComponent = (props) => {
     }
     return (
         <div style={styles}>
-            {disabledButton}
+            {disabledPrevButton}
 
             <div>
                 <span>Page</span>
@@ -37,18 +52,12 @@ const PaginationComponent = (props) => {
                     type='text'
                     autoFocus
                     value={props.currentPage}
-                    onChange={props.handleChange}
+                    onChange={(e) => props.handleChange(e)}
                 /><span>of {props.totalPages}</span>
             </div>
 
 
-            <Button
-                variant="contained"
-                color="primary"
-                onClick={props.handleNextClick}
-            >
-                Next
-            </Button>
+            {disabledNextButton}
         </div>
     );
 }
