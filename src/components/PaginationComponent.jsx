@@ -3,7 +3,22 @@ import { Button } from '@material-ui/core';
 
 const PaginationComponent = (props) => {
 
-    const disableButton = props.currentPage === 1 ? 'true' : null;
+    const disabledButton = props.currentPage === 1 ?
+        <Button
+            variant="contained"
+            color="primary"
+            disabled
+            onClick={props.handlePrevClick}
+        >
+            Prev
+</Button> :
+        <Button
+            variant="contained"
+            color="primary"
+            onClick={props.handlePrevClick}
+        >
+            Prev
+</Button>;
 
     const styles = {
         'display': 'flex',
@@ -14,14 +29,7 @@ const PaginationComponent = (props) => {
     }
     return (
         <div style={styles}>
-            <Button
-                disabled={disableButton}
-                variant="contained"
-                color="primary"
-                onClick={props.handlePrevClick}
-            >
-                Prev
-            </Button>
+            {disabledButton}
 
             <div>
                 <span>Page</span>
