@@ -3,6 +3,12 @@ import { Button } from '@material-ui/core';
 
 const PaginationComponent = (props) => {
 
+    const changePagination = (e) => {
+        if (e.target.value.trim() && e.keyCode === 13) {
+            props.handleChange(e.target.value)
+        }
+    }
+
     const disabledPrevButton = props.currentPage === 1 ?
         <Button
             variant="contained"
@@ -38,11 +44,11 @@ const PaginationComponent = (props) => {
     const wrapperStyles = {
         'display': 'flex',
         'margin': '30px auto',
-        'justify-content': 'space-around'
+        'justifyContent': 'space-around'
     }
 
     const inputStyles = {
-        'max-width': '50px',
+        'maxWidth': '50px',
         'margin': '0 5px'
     }
     return (
@@ -55,8 +61,8 @@ const PaginationComponent = (props) => {
                     style={inputStyles}
                     type='text'
                     autoFocus
-                    value={props.currentPage}
-                    onChange={(e) => props.handleChange(e)}
+                    defaultValue={props.currentPage}
+                    onKeyUp={changePagination}
                 /><span>of {props.totalPages}</span>
             </div>
 

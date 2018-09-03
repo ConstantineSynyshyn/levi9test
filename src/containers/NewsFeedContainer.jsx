@@ -50,15 +50,14 @@ class NewsFeedComponent extends Component {
         await this.getNews(nextPage);
     }
 
-    changeHandler = async (event) => {
-        const changedValue = event.target.value;
-        if (changedValue) {
-            await this.getNews(changedValue);
-            this.setState({
-                currentPage: changedValue,
-            })
-        }
+    changeHandler = async (value) => {
+        const changedValue = value;
+        await this.getNews(changedValue);
+        this.setState({
+            currentPage: changedValue,
+        })
     }
+
 
     getNews = async (page = 1) => {
         const token = 'a1f0d801-b45b-4fb8-aacc-d31d124a3614';
