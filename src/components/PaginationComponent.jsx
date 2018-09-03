@@ -35,20 +35,24 @@ const PaginationComponent = (props) => {
             Next
 </Button>;
 
-    const styles = {
+    const wrapperStyles = {
         'display': 'flex',
         'margin': '30px auto',
         'justify-content': 'space-around'
+    }
 
-
+    const inputStyles = {
+        'max-width': '50px',
+        'margin': '0 5px'
     }
     return (
-        <div style={styles}>
+        <div style={wrapperStyles}>
             {disabledPrevButton}
 
             <div>
                 <span>Page</span>
                 <input
+                    style={inputStyles}
                     type='text'
                     autoFocus
                     value={props.currentPage}

@@ -1,11 +1,15 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
+
+
 const TitleComponent = ({ title }) => {
+
+
     return (
         <div >
-            <AppBar position="sticky" color="primary">
+            <AppBar position="sticky" color="primary" >
                 <Toolbar>
-                    <Typography variant="title" color="inherit">
+                    <Typography variant="title" color="inherit" >
                         {title}
                     </Typography>
                 </Toolbar>

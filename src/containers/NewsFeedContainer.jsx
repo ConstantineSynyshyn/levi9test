@@ -7,6 +7,15 @@ import PaginationComponent from '../components/PaginationComponent';
 import RefreshButtonComponent from '../components/RefreshButtonComponent';
 import TitleComponent from '../components/TitleComponent';
 
+
+const errorStyles = {
+    'display': 'block',
+    'padding': '15px',
+    'margin': '10px',
+    'background-color': 'salmon',
+    'border': '1px solid red'
+};
+
 class NewsFeedComponent extends Component {
     state = {
         news: [],
@@ -14,6 +23,8 @@ class NewsFeedComponent extends Component {
         totalPages: 1,
         error: null
     }
+
+
 
     async componentDidMount() {
         await this.getNews();
@@ -84,7 +95,7 @@ class NewsFeedComponent extends Component {
                 />
                 {
                     this.state.error
-                        ? <span>{this.state.error}</span>
+                        ? <span style={errorStyles}>{this.state.error}</span>
                         : <div>
                             <RefreshButtonComponent
                                 handleClick={this.onRefreshButton}
