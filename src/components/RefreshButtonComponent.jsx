@@ -6,10 +6,11 @@ import { Button } from '@material-ui/core';
 const RefreshButtonComponent = (props) => {
 
     const styles = {
-        'margin': '40px auto',
-        'display': 'flex'
-
+        margin: '40px auto',
+        width: '100%',
     };
+
+
 
     return (
         <div style={styles}>
