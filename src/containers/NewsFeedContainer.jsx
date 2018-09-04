@@ -9,11 +9,11 @@ import TitleComponent from '../components/TitleComponent';
 
 
 const errorStyles = {
-    'display': 'block',
-    'padding': '15px',
-    'margin': '10px',
-    'background-color': 'salmon',
-    'border': '1px solid red'
+    display: 'block',
+    padding: '15px',
+    margin: '10px',
+    backgroundColor: 'salmon',
+    border: '1px solid red'
 };
 
 class NewsFeedComponent extends Component {

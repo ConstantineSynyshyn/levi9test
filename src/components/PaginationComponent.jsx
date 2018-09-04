@@ -42,14 +42,14 @@ const PaginationComponent = (props) => {
 </Button>;
 
     const wrapperStyles = {
-        'display': 'flex',
-        'margin': '30px auto',
-        'justifyContent': 'space-around'
+        display: 'flex',
+        margin: '30px auto',
+        justifyContent: 'space-around'
     }
 
     const inputStyles = {
-        'maxWidth': '50px',
-        'margin': '0 5px'
+        maxWidth: '50px',
+        margin: '0 5px'
     }
     return (
         <div style={wrapperStyles}>
