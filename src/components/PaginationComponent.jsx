@@ -62,7 +62,7 @@ const PaginationComponent = (props) => {
                     type='text'
                     autoFocus
                     defaultValue={props.currentPage}
-                    onKeyUp={changePagination}
+                    onKeyUp={changePagination} // value doesn't change when you switch between pages using btns
                 /><span>of {props.totalPages}</span>
             </div>
 
